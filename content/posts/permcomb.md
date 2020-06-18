@@ -1,6 +1,6 @@
 ---
 title: "Permutation and Combination Overview"
-date: 2020-06-18T07:11:09+05:30
+date: 2020-05-28T07:11:09+05:30
 categories: ["Algorithms","Python"]
 draft: false
 ---
