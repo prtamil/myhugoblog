@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta name="generator" content="Hugo 0.72.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content=""><meta property="og:title" content="Seive Algorithm to generate PrimeNumbers" />
+<meta property="og:description" content="Sieve of Eratosthenes The Sieve of Erathosthenes is an ancient algorithms to find all prime numbers up to any given limit. It has complexity of O(n log log n)
+How the Algorithm Works  Create a list of consecutive integers from 2 to n (2,3,4,5&hellip;n) Start with 2 strike out 2s multiplicants (4,6,8,10,&hellip;,n) Continue till N Go thru the List and collect which is not striked out The final elements not striked out is the list of prime numbers  Python Code def seive(n): multiples = set() # ---(2) for i in range(2,n&#43;1): # ---(1) if i not in multiples: yield i # ---(3) multiples." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://prtamil.github.io/posts/seive-algorithm/" />
+<meta property="article:published_time" content="2020-04-07T16:00:32+05:30" />
+<meta property="article:modified_time" content="2020-04-07T16:00:32+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Seive Algorithm to generate PrimeNumbers"/>
+<meta name="twitter:description" content="Sieve of Eratosthenes The Sieve of Erathosthenes is an ancient algorithms to find all prime numbers up to any given limit. It has complexity of O(n log log n)
+How the Algorithm Works  Create a list of consecutive integers from 2 to n (2,3,4,5&hellip;n) Start with 2 strike out 2s multiplicants (4,6,8,10,&hellip;,n) Continue till N Go thru the List and collect which is not striked out The final elements not striked out is the list of prime numbers  Python Code def seive(n): multiples = set() # ---(2) for i in range(2,n&#43;1): # ---(1) if i not in multiples: yield i # ---(3) multiples."/>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/all.css" />
+<title>Seive Algorithm to generate PrimeNumbers | Carpe diem</title></head>
+<body><header>
+
+  <div id="avatar">
+    <a href="http://prtamil.github.io/">
+      <img src="/images/tamil1.jpg" alt="Carpe diem">
+    </a>
+  </div>
+
+  <div id="titletext"><h2 id="title"><a href="http://prtamil.github.io/">Carpe diem</a></h2></div>
+  <div id="title-description"><p id="subtitle">Tamilselvan is a Programmer to the End</p><div id=social>
+    <nav>
+      <ul><li><a href="https://github.com/prtamil"><i title="" class="icons fab fa-github"></i></a></li><li><a href="https://www.linkedin.com/in/tamil-selvan-ab46927/"><i title="" class="icons fab fa-linkedin"></i></a></li><li><a href="https://www.facebook.com/prtamil"><i title="" class="icons fab fa-facebook"></i></a></li><li><a href="https://twitter.com/prtamil"><i title="" class="icons fab fa-twitter"></i></a></li></ul>
+    </nav>
+  </div>
+  </div>
+  <div id="mainmenu">
+    <nav>
+      <ul>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/categories/">Categories</a></li>
+        
+        <li><a href="/posts/">Posts</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+<main><div class="post">
+<div class="author">
+
+</div>
+<div class="post-header">
+
+<div class="meta">
+
+<div class="date">
+<span class="day">07</span>
+<span class="rest">Apr 2020</span>
+</div>
+
+</div>
+
+<div class="matter">
+<h1 class="title">Seive Algorithm to generate PrimeNumbers</h1>
+</div>
+</div>
+<div class="markdown">
+<h2 id="sieve-of-eratosthenes">Sieve of Eratosthenes</h2>
+<p>The Sieve of Erathosthenes is an ancient algorithms to find all
+prime numbers up to any given limit. It has complexity of O(n log log n)</p>
+<h3 id="how-the-algorithm-works">How the Algorithm Works</h3>
+<ol>
+<li>Create a list of consecutive integers from 2 to n (2,3,4,5&hellip;n)</li>
+<li>Start with 2 strike out 2s multiplicants (4,6,8,10,&hellip;,n)</li>
+<li>Continue till N</li>
+<li>Go thru the List and collect which is not striked out
+The final elements not striked out is the list of prime numbers</li>
+</ol>
+<h3 id="python-code">Python Code</h3>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">seive</span>(n):
+    multiples <span style="color:#666">=</span> <span style="color:#008000">set</span>()                       <span style="color:#408080;font-style:italic"># ---(2)</span>
+    <span style="color:#008000;font-weight:bold">for</span> i <span style="color:#a2f;font-weight:bold">in</span> <span style="color:#008000">range</span>(<span style="color:#666">2</span>,n<span style="color:#666">+</span><span style="color:#666">1</span>):                  <span style="color:#408080;font-style:italic"># ---(1)</span>
+        <span style="color:#008000;font-weight:bold">if</span> i <span style="color:#a2f;font-weight:bold">not</span> <span style="color:#a2f;font-weight:bold">in</span> multiples:
+            <span style="color:#008000;font-weight:bold">yield</span> i                         <span style="color:#408080;font-style:italic"># ---(3)</span>
+        multiples<span style="color:#666">.</span>update(<span style="color:#008000">range</span>(i<span style="color:#666">*</span>i,n<span style="color:#666">+</span><span style="color:#666">1</span>,i))  <span style="color:#408080;font-style:italic"># ---(2)</span>
+
+
+<span style="color:#008000;font-weight:bold">if</span> __name__ <span style="color:#666">==</span> <span style="color:#ba2121">&#39;__main__&#39;</span>:
+   <span style="color:#008000;font-weight:bold">print</span>(<span style="color:#008000">list</span>(seive(<span style="color:#666">10000000</span>)))
+</code></pre></div><h3 id="code-in-detail">Code in Detail</h3>
+<ol>
+<li>Go over range of consecutive elements</li>
+<li>Strike out Multiples
+<ul>
+<li>we create set in python to keep track of multiples</li>
+<li>for every iteration for example take number 2</li>
+<li>we update 2s multiples in the set using</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    multiples<span style="color:#666">.</span>update(<span style="color:#008000">range</span>(<span style="color:#666">2</span><span style="color:#666">*</span><span style="color:#666">2</span>,n<span style="color:#666">+</span><span style="color:#666">1</span>,<span style="color:#666">2</span>))
+</code></pre></div><ul>
+<li>we use range to calculate 2s multiplication</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">     <span style="color:#008000">range</span>(<span style="color:#666">4</span>,n<span style="color:#666">+</span><span style="color:#666">1</span>,<span style="color:#666">2</span>)
+</code></pre></div><ul>
+<li>range will return all (4,6,8,10,&hellip;.n) items</li>
+</ul>
+</li>
+<li>Check the item not available in multiples set that should be prime number</li>
+</ol>
+<h3 id="commonlisp-code">CommonLisp Code</h3>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp">(<span style="color:#008000">defun</span> <span style="color:#19177c">seive-of-erotheses</span>(<span style="color:#19177c">n</span>)
+  <span style="color:#408080;font-style:italic">; --- (1)</span>
+  (<span style="color:#008000;font-weight:bold">let</span> ((<span style="color:#19177c">bit-array</span> (<span style="color:#00f">make-array</span> (<span style="color:#00f">1+</span> <span style="color:#19177c">n</span>) <span style="color:#19177c">:element-type</span> <span style="color:#19177c">&#39;bit</span> <span style="color:#19177c">:initial-element</span> <span style="color:#666">0</span>))) 
+    (<span style="color:#008000">loop</span> <span style="color:#19177c">for</span> <span style="color:#19177c">i</span> <span style="color:#19177c">from</span> <span style="color:#666">2</span> <span style="color:#19177c">to</span> <span style="color:#19177c">n</span>
+          <span style="color:#008000">when</span> (<span style="color:#00f">zerop</span> (<span style="color:#b00040">bit</span> <span style="color:#19177c">bit-array</span> <span style="color:#19177c">i</span>))
+          <span style="color:#19177c">collect</span> <span style="color:#19177c">i</span>  <span style="color:#408080;font-style:italic">; --- (3)</span>
+          <span style="color:#008000">and</span> <span style="color:#008000">do</span>
+          (<span style="color:#008000">loop</span> <span style="color:#19177c">for</span> <span style="color:#19177c">j</span> <span style="color:#19177c">from</span> (<span style="color:#00f">expt</span> <span style="color:#19177c">i</span> <span style="color:#666">2</span>) <span style="color:#19177c">to</span> <span style="color:#19177c">n</span> <span style="color:#19177c">by</span> <span style="color:#19177c">i</span>     <span style="color:#408080;font-style:italic">; --- (2)</span>
+                <span style="color:#008000">do</span> (<span style="color:#008000">setf</span> (<span style="color:#b00040">bit</span> <span style="color:#19177c">bit-array</span> <span style="color:#19177c">j</span>) <span style="color:#666">1</span>)))))
+</code></pre></div><h3 id="code-in-detail-1">Code in Detail</h3>
+<ol>
+<li>We create Bit Array in CommonLisp its single bit array its efficient on space</li>
+<li>Update multiples in bit array
+The inner loop does this using toggling bit on the multiples position</li>
+<li>Collect it just check if bit is off else reject it</li>
+</ol>
+
+</div>
+<div class="tags">
+
+
+
+
+
+
+
+<div class="taxosfloating_left">
+<p>Categories</p>
+</div>
+<div class="termsfloating_right">
+<p>
+
+
+
+
+
+
+
+
+
+<a href="/categories/algorithms/"> algorithms </a>
+
+
+
+
+
+<a href="/categories/commonlisp/"> commonlisp </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/categories/python/"> python </a>
+
+
+
+</div>
+<div class="clearit"></div>
+
+
+
+
+
+
+
+
+
+</div></div>
+
+</main><footer>
+ © 2020, Tamilselvan Rangasami 
+
+
+    
+
+</footer>
+</body>
+</html>

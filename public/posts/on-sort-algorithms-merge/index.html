@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta name="generator" content="Hugo 0.72.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content=""><meta property="og:title" content="O(nlogn) Sorting Algorithms - MergeSort" />
+<meta property="og:description" content="Introduction Merge Sort Merge Sort is an efficient, general-purpose, comparison based sorting algorithm. Merge sort is a example of divide and conquer algorithm. This algorithm is invented none other than the founding figure of the Computer science John Von Neumann.
+Performance  Worst case O(n log n) Best Case O(n log n) sometimes O(n) Average case O(n log n)  Algorithm Merge List  Compare each element of two lists and append to the merged list Find remaining elements in list1 and append to merged list Find remaining elements in list2 and append to merged list  Merge Sort  Find mid element First list = list[start:mid] Apply Recursively Second List = list[mid:end] Apply Recursively Merge First and Second List  Python Code def merge(lst1,lst2): i = j = 0 s = [] while i &lt; len(lst1) and j &lt; len(lst2): if lst1[i] &lt;= lst2[j]: s." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://prtamil.github.io/posts/on-sort-algorithms-merge/" />
+<meta property="article:published_time" content="2020-04-08T19:14:44+05:30" />
+<meta property="article:modified_time" content="2020-04-08T19:14:44+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="O(nlogn) Sorting Algorithms - MergeSort"/>
+<meta name="twitter:description" content="Introduction Merge Sort Merge Sort is an efficient, general-purpose, comparison based sorting algorithm. Merge sort is a example of divide and conquer algorithm. This algorithm is invented none other than the founding figure of the Computer science John Von Neumann.
+Performance  Worst case O(n log n) Best Case O(n log n) sometimes O(n) Average case O(n log n)  Algorithm Merge List  Compare each element of two lists and append to the merged list Find remaining elements in list1 and append to merged list Find remaining elements in list2 and append to merged list  Merge Sort  Find mid element First list = list[start:mid] Apply Recursively Second List = list[mid:end] Apply Recursively Merge First and Second List  Python Code def merge(lst1,lst2): i = j = 0 s = [] while i &lt; len(lst1) and j &lt; len(lst2): if lst1[i] &lt;= lst2[j]: s."/>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/all.css" />
+<title>O(nlogn) Sorting Algorithms - MergeSort | Carpe diem</title></head>
+<body><header>
+
+  <div id="avatar">
+    <a href="http://prtamil.github.io/">
+      <img src="/images/tamil1.jpg" alt="Carpe diem">
+    </a>
+  </div>
+
+  <div id="titletext"><h2 id="title"><a href="http://prtamil.github.io/">Carpe diem</a></h2></div>
+  <div id="title-description"><p id="subtitle">Tamilselvan is a Programmer to the End</p><div id=social>
+    <nav>
+      <ul><li><a href="https://github.com/prtamil"><i title="" class="icons fab fa-github"></i></a></li><li><a href="https://www.linkedin.com/in/tamil-selvan-ab46927/"><i title="" class="icons fab fa-linkedin"></i></a></li><li><a href="https://www.facebook.com/prtamil"><i title="" class="icons fab fa-facebook"></i></a></li><li><a href="https://twitter.com/prtamil"><i title="" class="icons fab fa-twitter"></i></a></li></ul>
+    </nav>
+  </div>
+  </div>
+  <div id="mainmenu">
+    <nav>
+      <ul>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/categories/">Categories</a></li>
+        
+        <li><a href="/posts/">Posts</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+<main><div class="post">
+<div class="author">
+
+</div>
+<div class="post-header">
+
+<div class="meta">
+
+<div class="date">
+<span class="day">08</span>
+<span class="rest">Apr 2020</span>
+</div>
+
+</div>
+
+<div class="matter">
+<h1 class="title">O(nlogn) Sorting Algorithms - MergeSort</h1>
+</div>
+</div>
+<div class="markdown">
+<h2 id="introduction-merge-sort">Introduction Merge Sort</h2>
+<p>Merge Sort is an efficient, general-purpose, comparison based sorting algorithm.  Merge sort is a example of divide and conquer algorithm. This algorithm is invented none other than the founding figure of the Computer science John Von Neumann.</p>
+<h3 id="performance">Performance</h3>
+<ul>
+<li>Worst case O(n log n)</li>
+<li>Best Case O(n log n) sometimes O(n)</li>
+<li>Average case O(n log n)</li>
+</ul>
+<h3 id="algorithm">Algorithm</h3>
+<h6 id="merge-list">Merge List</h6>
+<ol>
+<li>Compare each element of two lists and append to the merged list</li>
+<li>Find remaining elements in list1 and append to merged list</li>
+<li>Find remaining elements in list2 and append to merged list</li>
+</ol>
+<h6 id="merge-sort">Merge Sort</h6>
+<ol>
+<li>Find mid element</li>
+<li>First list =  list[start:mid] Apply Recursively</li>
+<li>Second List = list[mid:end]  Apply Recursively</li>
+<li>Merge First and Second List</li>
+</ol>
+<h3 id="python-code">Python Code</h3>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">merge</span>(lst1,lst2):
+    i <span style="color:#666">=</span> j <span style="color:#666">=</span> <span style="color:#666">0</span>
+    s <span style="color:#666">=</span> []
+    <span style="color:#008000;font-weight:bold">while</span> i <span style="color:#666">&lt;</span> <span style="color:#008000">len</span>(lst1) <span style="color:#a2f;font-weight:bold">and</span> j <span style="color:#666">&lt;</span> <span style="color:#008000">len</span>(lst2):
+        <span style="color:#008000;font-weight:bold">if</span> lst1[i] <span style="color:#666">&lt;=</span> lst2[j]:
+            s<span style="color:#666">.</span>append(lst1[i])
+            i <span style="color:#666">+=</span> <span style="color:#666">1</span>
+        <span style="color:#008000;font-weight:bold">else</span>:
+            s<span style="color:#666">.</span>append(lst2[j])
+            j <span style="color:#666">+=</span> <span style="color:#666">1</span>
+    <span style="color:#408080;font-style:italic"># Collect the remaining</span>
+    s<span style="color:#666">.</span>extend(lst1[i:])
+    s<span style="color:#666">.</span>extend(lst2[j:])
+    <span style="color:#008000;font-weight:bold">return</span> s
+ 
+<span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">mergesort</span>(lst):
+    <span style="color:#008000;font-weight:bold">if</span> <span style="color:#008000">len</span>(lst) <span style="color:#666">&lt;</span> <span style="color:#666">2</span>:
+        <span style="color:#008000;font-weight:bold">return</span> lst
+    mid <span style="color:#666">=</span> <span style="color:#008000">len</span>(lst) <span style="color:#666">//</span> <span style="color:#666">2</span>
+    first <span style="color:#666">=</span> mergesort(lst[:mid])
+    last <span style="color:#666">=</span> mergesort(lst[mid:])
+    <span style="color:#008000;font-weight:bold">return</span> merge(first,last)
+ 
+</code></pre></div><p>The code is straight forward. Merge function merges two list in ascending order. it will compare two lists and merge into single list.
+If both lists length are not same it will compare and append upto common length and it will merge rest into common lists.</p>
+<p>MergeSort function splits the lists by middle and doing that recursively and finally merges first half and second half.</p>
+
+</div>
+<div class="tags">
+
+
+
+
+
+
+
+<div class="taxosfloating_left">
+<p>Categories</p>
+</div>
+<div class="termsfloating_right">
+<p>
+
+
+
+
+
+<a href="/categories/algorithms/"> algorithms </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/categories/python/"> python </a>
+
+
+
+
+
+
+
+</div>
+<div class="clearit"></div>
+
+
+
+
+
+
+
+
+
+</div></div>
+
+</main><footer>
+ © 2020, Tamilselvan Rangasami 
+
+
+    
+
+</footer>
+</body>
+</html>

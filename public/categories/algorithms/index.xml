@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithms on Carpe diem</title>
+    <link>http://prtamil.github.io/categories/algorithms/</link>
+    <description>Recent content in Algorithms on prtamil.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2020, Tamilselvan Rangasami</copyright>
+    <lastBuildDate>Fri, 08 May 2020 19:14:44 +0530</lastBuildDate>
+    
+    <atom:link href="http://prtamil.github.io/categories/algorithms/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>O(nlogn) Sorting Algorithms - HeapSort</title>
+      <link>http://prtamil.github.io/posts/on-sort-algorithms-heap/</link>
+      <pubDate>Fri, 08 May 2020 19:14:44 +0530</pubDate>
+      
+      <guid>http://prtamil.github.io/posts/on-sort-algorithms-heap/</guid>
+      <description>
+      
+      Introduction Heap Sort Heapsort is a comparison based sorting algorithm. It is invented by JWJ. Williams in 1964. Invent...
+      
+      </description>
+    </item>
+    <item>
+      <title>O(nlogn) Sorting Algorithms - MergeSort</title>
+      <link>http://prtamil.github.io/posts/on-sort-algorithms-merge/</link>
+      <pubDate>Wed, 08 Apr 2020 19:14:44 +0530</pubDate>
+      
+      <guid>http://prtamil.github.io/posts/on-sort-algorithms-merge/</guid>
+      <description>
+      
+      Introduction Merge Sort Merge Sort is an efficient, general-purpose, comparison based sorting algorithm. Merge sort is a...
+      
+      </description>
+    </item>
+    <item>
+      <title>O(nlogn) Sorting Algorithms - QuickSort</title>
+      <link>http://prtamil.github.io/posts/on-sort-algorithms-quick/</link>
+      <pubDate>Tue, 07 Apr 2020 19:14:44 +0530</pubDate>
+      
+      <guid>http://prtamil.github.io/posts/on-sort-algorithms-quick/</guid>
+      <description>
+      
+      Introduction This is the series of Sorting Algorithm which has O(nlogn) Average case Complexity. This algorithm is inven...
+      
+      </description>
+    </item>
+    <item>
+      <title>Seive Algorithm to generate PrimeNumbers</title>
+      <link>http://prtamil.github.io/posts/seive-algorithm/</link>
+      <pubDate>Tue, 07 Apr 2020 16:00:32 +0530</pubDate>
+      
+      <guid>http://prtamil.github.io/posts/seive-algorithm/</guid>
+      <description>
+      
+      Sieve of Eratosthenes The Sieve of Erathosthenes is an ancient algorithms to find all prime numbers up to any given limi...
+      
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta name="generator" content="Hugo 0.72.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="programming,commonlisp,ide"><meta name="description" content=""><meta property="og:title" content="Slime Connect to MultipleLisps" />
+<meta property="og:description" content="When you are using slime to connect emacs the default &lsquo;M-x slime&rsquo; will connect to local instance of CommonLisp. But If you want to connect to Lisps in different machine you can use slime feature called
+ M-x slime-connect
+ In-order to do that we need start CommonLisp server.
+Swank Server You can start another local instance or start swank server on different machine.
+Starting Local Instance of Lisp (ql:quickload &#34;swank&#34;) (swank:create-server :port 4005) Starting Remote Instance via SSH In order to start Lisp instance on remote machine we need to set &lsquo;loopback-interface&rsquo; to remote-ip address." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://prtamil.github.io/posts/slime/" />
+<meta property="article:published_time" content="2016-11-19T12:46:45+12:30" />
+<meta property="article:modified_time" content="2016-11-19T12:46:45+12:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Slime Connect to MultipleLisps"/>
+<meta name="twitter:description" content="When you are using slime to connect emacs the default &lsquo;M-x slime&rsquo; will connect to local instance of CommonLisp. But If you want to connect to Lisps in different machine you can use slime feature called
+ M-x slime-connect
+ In-order to do that we need start CommonLisp server.
+Swank Server You can start another local instance or start swank server on different machine.
+Starting Local Instance of Lisp (ql:quickload &#34;swank&#34;) (swank:create-server :port 4005) Starting Remote Instance via SSH In order to start Lisp instance on remote machine we need to set &lsquo;loopback-interface&rsquo; to remote-ip address."/>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/all.css" />
+<title>Slime Connect to MultipleLisps | Carpe diem</title></head>
+<body><header>
+
+  <div id="avatar">
+    <a href="http://prtamil.github.io/">
+      <img src="/images/tamil1.jpg" alt="Carpe diem">
+    </a>
+  </div>
+
+  <div id="titletext"><h2 id="title"><a href="http://prtamil.github.io/">Carpe diem</a></h2></div>
+  <div id="title-description"><p id="subtitle">Tamilselvan is a Programmer to the End</p><div id=social>
+    <nav>
+      <ul><li><a href="https://github.com/prtamil"><i title="" class="icons fab fa-github"></i></a></li><li><a href="https://www.linkedin.com/in/tamil-selvan-ab46927/"><i title="" class="icons fab fa-linkedin"></i></a></li><li><a href="https://www.facebook.com/prtamil"><i title="" class="icons fab fa-facebook"></i></a></li><li><a href="https://twitter.com/prtamil"><i title="" class="icons fab fa-twitter"></i></a></li></ul>
+    </nav>
+  </div>
+  </div>
+  <div id="mainmenu">
+    <nav>
+      <ul>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/categories/">Categories</a></li>
+        
+        <li><a href="/posts/">Posts</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+<main><div class="post">
+<div class="author">
+
+</div>
+<div class="post-header">
+
+<div class="meta">
+
+<div class="date">
+<span class="day">19</span>
+<span class="rest">Nov 2016</span>
+</div>
+
+</div>
+
+<div class="matter">
+<h1 class="title">Slime Connect to MultipleLisps</h1>
+</div>
+</div>
+<div class="markdown">
+<p>When you are using slime to connect emacs the default &lsquo;M-x slime&rsquo; will connect to local
+instance of CommonLisp. But If you want to connect to Lisps in different machine you can
+use slime feature called</p>
+<blockquote>
+<p>M-x slime-connect</p>
+</blockquote>
+<p>In-order to do that we need start CommonLisp server.</p>
+<h2 id="swank-server">Swank Server</h2>
+<p>You can start another local instance or start swank server on different machine.</p>
+<h3 id="starting-local-instance-of-lisp">Starting Local Instance of Lisp</h3>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-common-lisp" data-lang="common-lisp">    (<span style="color:#19177c">ql:quickload</span> <span style="color:#ba2121">&#34;swank&#34;</span>)
+    (<span style="color:#19177c">swank:create-server</span> <span style="color:#19177c">:port</span> <span style="color:#666">4005</span>)
+</code></pre></div><h3 id="starting-remote-instance-via-ssh">Starting Remote Instance via SSH</h3>
+<p>In order to start Lisp instance on remote machine we need to set &lsquo;<em>loopback-interface</em>&rsquo; to remote-ip address.</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-common-lisp" data-lang="common-lisp">    (<span style="color:#19177c">ql:quickload</span> <span style="color:#ba2121">&#34;swank&#34;</span>)
+    (<span style="color:#008000">setf</span> <span style="color:#19177c">swank::*loopback-interface*</span> <span style="color:#ba2121">&#34;192.168.0.5&#34;</span>)
+    (<span style="color:#19177c">swank:create-server</span> <span style="color:#19177c">:port</span> <span style="color:#666">4005</span>)
+</code></pre></div><h2 id="connecting-to-different-lisp">Connecting to Different Lisp</h2>
+<p>So in order to connect to different lisp just use</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-common-lisp" data-lang="common-lisp">    <span style="color:#19177c">M-x</span> <span style="color:#19177c">slime-connect</span>
+</code></pre></div><p>It will ask for IP and port.</p>
+<p>Connect and Enjoy</p>
+
+</div>
+<div class="tags">
+
+
+
+
+
+
+
+<div class="taxosfloating_left">
+<p>Categories</p>
+</div>
+<div class="termsfloating_right">
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/categories/commonlisp/"> commonlisp </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="clearit"></div>
+
+
+
+
+
+
+
+
+
+<div class="taxosfloating_left">
+<p>Tags</p>
+</div>
+<div class="termsfloating_right">
+<p>
+
+
+
+<a href="/tags/commonlisp/"> commonlisp </a>
+
+
+
+
+
+
+
+
+
+<a href="/tags/ide/"> ide </a>
+
+
+
+
+
+
+
+
+
+<a href="/tags/programming/"> programming </a>
+
+
+
+
+
+</div>
+<div class="clearit"></div>
+
+
+
+
+
+</div></div>
+
+</main><footer>
+ © 2020, Tamilselvan Rangasami 
+
+
+    
+
+</footer>
+</body>
+</html>

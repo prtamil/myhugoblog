@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CommonLisp on Carpe diem</title>
+    <link>http://prtamil.github.io/categories/commonlisp/</link>
+    <description>Recent content in CommonLisp on prtamil.github.io</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2020, Tamilselvan Rangasami</copyright>
+    <lastBuildDate>Tue, 07 Apr 2020 16:00:32 +0530</lastBuildDate>
+    
+    <atom:link href="http://prtamil.github.io/categories/commonlisp/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Seive Algorithm to generate PrimeNumbers</title>
+      <link>http://prtamil.github.io/posts/seive-algorithm/</link>
+      <pubDate>Tue, 07 Apr 2020 16:00:32 +0530</pubDate>
+      
+      <guid>http://prtamil.github.io/posts/seive-algorithm/</guid>
+      <description>
+      
+      Sieve of Eratosthenes The Sieve of Erathosthenes is an ancient algorithms to find all prime numbers up to any given limi...
+      
+      </description>
+    </item>
+    <item>
+      <title>Slime Connect to MultipleLisps</title>
+      <link>http://prtamil.github.io/posts/slime/</link>
+      <pubDate>Sat, 19 Nov 2016 12:46:45 +1230</pubDate>
+      
+      <guid>http://prtamil.github.io/posts/slime/</guid>
+      <description>
+      
+      When you are using slime to connect emacs the default ‘M-x slime’ will connect to local instance of CommonLi...
+      
+      </description>
+    </item>
+    
+  </channel>
+</rss>

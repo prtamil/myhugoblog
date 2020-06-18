@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta name="generator" content="Hugo 0.72.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content=""><meta property="og:title" content="O(nlogn) Sorting Algorithms - QuickSort" />
+<meta property="og:description" content="Introduction This is the series of Sorting Algorithm which has O(nlogn) Average case Complexity. This algorithm is invented by British Computer Scientist Tony Hoare at 1959. Quick sort is an example of divide and conquer algorithm. Mathematical analysis shows that
+ Average Case O(nlogn) Worst Case O(n^2)  Basic Algorithm  Pick an Element from the array. This element is called as pivot. Partition it based on Pivot  values less than pivot will be appended to less list values greater than equal to pivot will be on greater list   Recursively apply above steps to lesser array and greater array  Python Code def qs(l): if not l: return [] else: piv = l[0] less = [x for x in l if x &lt; piv] more = [x for x in l[1:] if x &gt;= piv] return qs(less) &#43; [piv] &#43; qs(more) Code Summary The code is straight forward." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://prtamil.github.io/posts/on-sort-algorithms-quick/" />
+<meta property="article:published_time" content="2020-04-07T19:14:44+05:30" />
+<meta property="article:modified_time" content="2020-04-07T19:14:44+05:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="O(nlogn) Sorting Algorithms - QuickSort"/>
+<meta name="twitter:description" content="Introduction This is the series of Sorting Algorithm which has O(nlogn) Average case Complexity. This algorithm is invented by British Computer Scientist Tony Hoare at 1959. Quick sort is an example of divide and conquer algorithm. Mathematical analysis shows that
+ Average Case O(nlogn) Worst Case O(n^2)  Basic Algorithm  Pick an Element from the array. This element is called as pivot. Partition it based on Pivot  values less than pivot will be appended to less list values greater than equal to pivot will be on greater list   Recursively apply above steps to lesser array and greater array  Python Code def qs(l): if not l: return [] else: piv = l[0] less = [x for x in l if x &lt; piv] more = [x for x in l[1:] if x &gt;= piv] return qs(less) &#43; [piv] &#43; qs(more) Code Summary The code is straight forward."/>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/all.css" />
+<title>O(nlogn) Sorting Algorithms - QuickSort | Carpe diem</title></head>
+<body><header>
+
+  <div id="avatar">
+    <a href="http://prtamil.github.io/">
+      <img src="/images/tamil1.jpg" alt="Carpe diem">
+    </a>
+  </div>
+
+  <div id="titletext"><h2 id="title"><a href="http://prtamil.github.io/">Carpe diem</a></h2></div>
+  <div id="title-description"><p id="subtitle">Tamilselvan is a Programmer to the End</p><div id=social>
+    <nav>
+      <ul><li><a href="https://github.com/prtamil"><i title="" class="icons fab fa-github"></i></a></li><li><a href="https://www.linkedin.com/in/tamil-selvan-ab46927/"><i title="" class="icons fab fa-linkedin"></i></a></li><li><a href="https://www.facebook.com/prtamil"><i title="" class="icons fab fa-facebook"></i></a></li><li><a href="https://twitter.com/prtamil"><i title="" class="icons fab fa-twitter"></i></a></li></ul>
+    </nav>
+  </div>
+  </div>
+  <div id="mainmenu">
+    <nav>
+      <ul>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/categories/">Categories</a></li>
+        
+        <li><a href="/posts/">Posts</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+<main><div class="post">
+<div class="author">
+
+</div>
+<div class="post-header">
+
+<div class="meta">
+
+<div class="date">
+<span class="day">07</span>
+<span class="rest">Apr 2020</span>
+</div>
+
+</div>
+
+<div class="matter">
+<h1 class="title">O(nlogn) Sorting Algorithms - QuickSort</h1>
+</div>
+</div>
+<div class="markdown">
+<h2 id="introduction">Introduction</h2>
+<p>This is the series of Sorting Algorithm which has O(nlogn) Average case Complexity.
+This algorithm is invented by British Computer Scientist Tony Hoare at 1959.
+Quick sort is an example of divide and conquer algorithm.  Mathematical analysis shows that</p>
+<ul>
+<li>Average Case O(nlogn)</li>
+<li>Worst Case O(n^2)</li>
+</ul>
+<h3 id="basic-algorithm">Basic Algorithm</h3>
+<ol>
+<li>Pick an Element from the array. This element is called as pivot.</li>
+<li>Partition it based on Pivot
+<ul>
+<li>values less than pivot will be appended to less list</li>
+<li>values greater than equal to pivot will be on greater list</li>
+</ul>
+</li>
+<li>Recursively apply above steps to lesser array and greater array</li>
+</ol>
+<h3 id="python-code">Python Code</h3>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#008000;font-weight:bold">def</span> <span style="color:#00f">qs</span>(l):
+   <span style="color:#008000;font-weight:bold">if</span> <span style="color:#a2f;font-weight:bold">not</span> l:
+        <span style="color:#008000;font-weight:bold">return</span> []
+   <span style="color:#008000;font-weight:bold">else</span>:
+        piv <span style="color:#666">=</span> l[<span style="color:#666">0</span>]
+        less <span style="color:#666">=</span> [x <span style="color:#008000;font-weight:bold">for</span> x <span style="color:#a2f;font-weight:bold">in</span> l      <span style="color:#008000;font-weight:bold">if</span> x <span style="color:#666">&lt;</span> piv]
+        more <span style="color:#666">=</span> [x <span style="color:#008000;font-weight:bold">for</span> x <span style="color:#a2f;font-weight:bold">in</span> l[<span style="color:#666">1</span>:]  <span style="color:#008000;font-weight:bold">if</span> x <span style="color:#666">&gt;=</span> piv]
+        <span style="color:#008000;font-weight:bold">return</span> qs(less) <span style="color:#666">+</span> [piv] <span style="color:#666">+</span> qs(more)
+</code></pre></div><h3 id="code-summary">Code Summary</h3>
+<p>The code is straight forward.
+Last line is crucial. It does recursive of less
+and append current pivot and recursive of more list.</p>
+
+</div>
+<div class="tags">
+
+
+
+
+
+
+
+<div class="taxosfloating_left">
+<p>Categories</p>
+</div>
+<div class="termsfloating_right">
+<p>
+
+
+
+
+
+
+
+<a href="/categories/algorithms/"> algorithms </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/categories/python/"> python </a>
+
+
+
+
+
+</div>
+<div class="clearit"></div>
+
+
+
+
+
+
+
+
+
+</div></div>
+
+</main><footer>
+ © 2020, Tamilselvan Rangasami 
+
+
+    
+
+</footer>
+</body>
+</html>

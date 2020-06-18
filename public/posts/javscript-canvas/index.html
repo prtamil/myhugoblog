@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta name="generator" content="Hugo 0.72.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="programming,javascript,graphics"><meta name="description" content=""><meta property="og:title" content="Javascript Canvas Bouncing Balls" />
+<meta property="og:description" content="Javascript Canvas tutorial This is my first javascript canvas demo. We will discuss about how to building it.
+Lets start with Simple Vector Class function Vector(x,y){ this.x = x || 0; this.y = y || 0; } //Add another vector Vector.prototype.add = function(vector) { this.x &#43;= vector.x; this.y &#43;= vector.y; } //multiply with scalar Vector.prototype.multiplyScalar = function(scalar){ this.x *= scalar; this.y *= scalar; } //Get Length of vector Vector.prototype.getMagnitude = function() { return Math." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://prtamil.github.io/posts/javscript-canvas/" />
+<meta property="article:published_time" content="2016-11-19T12:46:43+12:30" />
+<meta property="article:modified_time" content="2016-11-19T12:46:43+12:30" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Javascript Canvas Bouncing Balls"/>
+<meta name="twitter:description" content="Javascript Canvas tutorial This is my first javascript canvas demo. We will discuss about how to building it.
+Lets start with Simple Vector Class function Vector(x,y){ this.x = x || 0; this.y = y || 0; } //Add another vector Vector.prototype.add = function(vector) { this.x &#43;= vector.x; this.y &#43;= vector.y; } //multiply with scalar Vector.prototype.multiplyScalar = function(scalar){ this.x *= scalar; this.y *= scalar; } //Get Length of vector Vector.prototype.getMagnitude = function() { return Math."/>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="http://prtamil.github.io/css/all.css" />
+<title>Javascript Canvas Bouncing Balls | Carpe diem</title></head>
+<body><header>
+
+  <div id="avatar">
+    <a href="http://prtamil.github.io/">
+      <img src="/images/tamil1.jpg" alt="Carpe diem">
+    </a>
+  </div>
+
+  <div id="titletext"><h2 id="title"><a href="http://prtamil.github.io/">Carpe diem</a></h2></div>
+  <div id="title-description"><p id="subtitle">Tamilselvan is a Programmer to the End</p><div id=social>
+    <nav>
+      <ul><li><a href="https://github.com/prtamil"><i title="" class="icons fab fa-github"></i></a></li><li><a href="https://www.linkedin.com/in/tamil-selvan-ab46927/"><i title="" class="icons fab fa-linkedin"></i></a></li><li><a href="https://www.facebook.com/prtamil"><i title="" class="icons fab fa-facebook"></i></a></li><li><a href="https://twitter.com/prtamil"><i title="" class="icons fab fa-twitter"></i></a></li></ul>
+    </nav>
+  </div>
+  </div>
+  <div id="mainmenu">
+    <nav>
+      <ul>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/categories/">Categories</a></li>
+        
+        <li><a href="/posts/">Posts</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+<main><div class="post">
+<div class="author">
+
+</div>
+<div class="post-header">
+
+<div class="meta">
+
+<div class="date">
+<span class="day">19</span>
+<span class="rest">Nov 2016</span>
+</div>
+
+</div>
+
+<div class="matter">
+<h1 class="title">Javascript Canvas Bouncing Balls</h1>
+</div>
+</div>
+<div class="markdown">
+<h3 id="javascript-canvas-tutorial">Javascript Canvas tutorial</h3>
+<p>This is my first javascript canvas demo. We will discuss about how to building it.</p>
+<!-- raw HTML omitted -->
+<h4 id="lets-start-with-simple-vector-class">Lets start with Simple Vector Class</h4>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#008000;font-weight:bold">function</span> Vector(x,y){
+    <span style="color:#008000;font-weight:bold">this</span>.x <span style="color:#666">=</span> x <span style="color:#666">||</span> <span style="color:#666">0</span>;
+    <span style="color:#008000;font-weight:bold">this</span>.y <span style="color:#666">=</span> y <span style="color:#666">||</span> <span style="color:#666">0</span>;
+}
+
+<span style="color:#408080;font-style:italic">//Add another vector
+</span><span style="color:#408080;font-style:italic"></span>Vector.prototype.add <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">function</span>(vector) {
+    <span style="color:#008000;font-weight:bold">this</span>.x <span style="color:#666">+=</span> vector.x;
+    <span style="color:#008000;font-weight:bold">this</span>.y <span style="color:#666">+=</span> vector.y;
+}
+
+<span style="color:#408080;font-style:italic">//multiply with scalar
+</span><span style="color:#408080;font-style:italic"></span>Vector.prototype.multiplyScalar <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">function</span>(scalar){
+    <span style="color:#008000;font-weight:bold">this</span>.x <span style="color:#666">*=</span> scalar;
+    <span style="color:#008000;font-weight:bold">this</span>.y <span style="color:#666">*=</span> scalar;
+}
+<span style="color:#408080;font-style:italic">//Get Length of vector
+</span><span style="color:#408080;font-style:italic"></span>Vector.prototype.getMagnitude <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">function</span>() {
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">Math</span>.sqrt(<span style="color:#008000;font-weight:bold">this</span>.x <span style="color:#666">*</span> <span style="color:#008000;font-weight:bold">this</span>.x <span style="color:#666">+</span> <span style="color:#008000;font-weight:bold">this</span>. y <span style="color:#666">*</span> <span style="color:#008000;font-weight:bold">this</span>.y);
+}
+
+<span style="color:#408080;font-style:italic">//Get the angle accounting for the quadrant we are in
+</span><span style="color:#408080;font-style:italic"></span>Vector.prototype.getAngle <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">function</span>(){
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000">Math</span>.atan2(<span style="color:#008000;font-weight:bold">this</span>.y, <span style="color:#008000;font-weight:bold">this</span>.x);
+}
+
+<span style="color:#408080;font-style:italic">//Allows us to get a new vector from angle magnitude
+</span><span style="color:#408080;font-style:italic"></span>Vector.fromAngle <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">function</span>(angle, magnitude) {
+    <span style="color:#008000;font-weight:bold">return</span> <span style="color:#008000;font-weight:bold">new</span> Vector(magnitude<span style="color:#666">*</span> <span style="color:#008000">Math</span>.cos(angle),
+                      magnitude<span style="color:#666">*</span> <span style="color:#008000">Math</span>.sin(angle));
+}
+</code></pre></div><p>Vector class adds methods such as</p>
+<blockquote>
+</blockquote>
+<ul>
+<li>add()</li>
+<li>multiplyScalar()</li>
+<li>getMagnitude()</li>
+<li>getAngle()
+<ul>
+<li>Gets Angle from current position</li>
+</ul>
+</li>
+<li>fromAngle
+<ul>
+<li>Gets Current Position vector from Angle and Magnitude</li>
+</ul>
+</li>
+</ul>
+<h4 id="movers-class">Movers Class</h4>
+<p>Movers are objects. I called it as movers. You can rename it as objects.
+The main purpose of it is to handle objects movement.
+Each movers has</p>
+<ul>
+<li>Velocity</li>
+<li>Location</li>
+<li>Direction</li>
+</ul>
+<p>And we can define current movement as</p>
+<blockquote>
+<p>Position = Location + Velocity</p>
+</blockquote>
+<p>Since this is Bouncing balls once it reaches the boundary we can switch direction</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#008000;font-weight:bold">function</span> Mover(x,y) {
+    <span style="color:#008000;font-weight:bold">this</span>.location <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Vector(x,y);
+    <span style="color:#008000;font-weight:bold">this</span>.velocity <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Vector(<span style="color:#666">1</span>,<span style="color:#666">1</span>);
+    <span style="color:#008000;font-weight:bold">this</span>.direction <span style="color:#666">=</span> <span style="color:#666">1</span>;
+}
+
+Mover.prototype.update <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">function</span>(){
+    <span style="color:#008000;font-weight:bold">this</span>.location.add(<span style="color:#008000;font-weight:bold">this</span>.velocity);
+    
+}
+
+Mover.prototype.checkBounds <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">function</span>(){
+    <span style="color:#008000;font-weight:bold">if</span>(<span style="color:#008000;font-weight:bold">this</span>.location.x <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> <span style="color:#008000;font-weight:bold">this</span>.location.x <span style="color:#666">&gt;</span> <span style="color:#008000">window</span>.innerWidth)
+        <span style="color:#008000;font-weight:bold">this</span>.velocity.x <span style="color:#666">*=</span> <span style="color:#666">-</span><span style="color:#008000;font-weight:bold">this</span>.direction;
+    <span style="color:#008000;font-weight:bold">if</span>(<span style="color:#008000;font-weight:bold">this</span>.location.y <span style="color:#666">&lt;</span> <span style="color:#666">0</span> <span style="color:#666">||</span> <span style="color:#008000;font-weight:bold">this</span>.location.y <span style="color:#666">&gt;</span> <span style="color:#008000">window</span>.innerHeight)
+        <span style="color:#008000;font-weight:bold">this</span>.velocity.y <span style="color:#666">*=</span> <span style="color:#666">-</span><span style="color:#008000;font-weight:bold">this</span>.direction;
+}
+Mover.prototype.draw <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">function</span>(ctx){
+    ctx.beginPath();
+    ctx.arc(<span style="color:#008000;font-weight:bold">this</span>.location.x, <span style="color:#008000;font-weight:bold">this</span>.location.y,<span style="color:#666">20</span>,<span style="color:#666">0</span>,<span style="color:#666">2</span><span style="color:#666">*</span><span style="color:#008000">Math</span>.PI);
+    ctx.fillStyle <span style="color:#666">=</span> <span style="color:#ba2121">&#34;#0f0&#34;</span>;
+    ctx.fill();
+}
+</code></pre></div><h4 id="drawing-part">Drawing Part.</h4>
+<p>Now the drawing part. we use</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">requestAnimationFrame
+</code></pre></div><p>function to Draw the sequences on each and every frame.
+We define a Animation Loop with following logic</p>
+<ul>
+<li>clear();</li>
+<li>update();</li>
+<li>draw();</li>
+<li>queue();</li>
+</ul>
+<p>So The Final Code</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+
+<span style="color:#008000">window</span>.onload <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">function</span> () {
+    <span style="color:#008000;font-weight:bold">var</span> canvas <span style="color:#666">=</span> <span style="color:#008000">document</span>.querySelector(<span style="color:#ba2121">&#39;canvas&#39;</span>);
+    <span style="color:#008000;font-weight:bold">var</span> ctx <span style="color:#666">=</span> canvas.getContext(<span style="color:#ba2121">&#39;2d&#39;</span>);
+
+    canvas.width <span style="color:#666">=</span> <span style="color:#008000">window</span>.innerWidth;
+    canvas.height <span style="color:#666">=</span> <span style="color:#008000">window</span>.innerHeight;
+    
+
+    
+    <span style="color:#008000;font-weight:bold">var</span> movers <span style="color:#666">=</span> [];
+    <span style="color:#008000;font-weight:bold">var</span> moverCount <span style="color:#666">=</span> <span style="color:#666">10</span>;
+    
+    <span style="color:#008000;font-weight:bold">for</span>(<span style="color:#008000;font-weight:bold">var</span> i <span style="color:#666">=</span> <span style="color:#666">0</span>; i <span style="color:#666">&lt;</span> moverCount; i<span style="color:#666">++</span>){
+        <span style="color:#008000;font-weight:bold">var</span> m <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Mover(<span style="color:#008000">Math</span>.random()<span style="color:#666">*</span><span style="color:#666">100</span>, <span style="color:#008000">Math</span>.random()<span style="color:#666">*</span><span style="color:#666">100</span>);
+        m.velocity <span style="color:#666">=</span> <span style="color:#008000;font-weight:bold">new</span> Vector(<span style="color:#008000">Math</span>.random()<span style="color:#666">*</span><span style="color:#666">15</span>, <span style="color:#008000">Math</span>.random()<span style="color:#666">*</span><span style="color:#666">15</span>);
+        movers.push(m);
+    }
+    
+    <span style="color:#008000;font-weight:bold">function</span> loop() {
+        clear();
+        update();
+        draw();
+        queue();
+    }
+
+    <span style="color:#008000;font-weight:bold">function</span> clear() {
+        ctx.fillStyle <span style="color:#666">=</span> <span style="color:#ba2121">&#34;#000&#34;</span>;
+        ctx.fillRect(<span style="color:#666">0</span>, <span style="color:#666">0</span>, canvas.width, canvas.height);
+    }
+
+    <span style="color:#008000;font-weight:bold">function</span> update() {
+        movers.map(<span style="color:#008000;font-weight:bold">function</span>(m){
+            m.update();
+            m.checkBounds();
+        });
+    }
+    
+
+    <span style="color:#008000;font-weight:bold">function</span> draw() {
+       movers.map(<span style="color:#008000;font-weight:bold">function</span>(m){
+           m.draw(ctx);
+       });
+    }
+
+    <span style="color:#008000;font-weight:bold">function</span> queue() {
+        <span style="color:#008000">window</span>.requestAnimationFrame(loop);
+    }
+    
+    loop();
+}
+</code></pre></div><p>So this defines the basic Javascript Canvas Demo</p>
+
+</div>
+<div class="tags">
+
+
+
+
+
+
+
+<div class="taxosfloating_left">
+<p>Categories</p>
+</div>
+<div class="termsfloating_right">
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="/categories/javascript/"> javascript </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="clearit"></div>
+
+
+
+
+
+
+
+
+
+<div class="taxosfloating_left">
+<p>Tags</p>
+</div>
+<div class="termsfloating_right">
+<p>
+
+
+
+
+
+
+
+<a href="/tags/graphics/"> graphics </a>
+
+
+
+
+
+
+
+
+
+<a href="/tags/javascript/"> javascript </a>
+
+
+
+
+
+
+
+<a href="/tags/programming/"> programming </a>
+
+
+
+</div>
+<div class="clearit"></div>
+
+
+
+
+
+</div></div>
+
+</main><footer>
+ © 2020, Tamilselvan Rangasami 
+
+
+    
+
+</footer>
+</body>
+</html>
