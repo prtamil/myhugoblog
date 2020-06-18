@@ -1,2 +1,2 @@
-# myhugoblog
-My hugo blog source
+# My Blog on Hugo
+This is source of my personal blog.
