@@ -5,6 +5,9 @@ categories: ["Algorithms","Python"]
 draft: false
 ---
 ## Introduction:
+Counting Basics
+- And = Multiply.
+- Or = Addition.
 ### Permutation:
 - Can be mentioned as Various possible way to arrange the collection where order does matter.
 - It is positional based arrangement.
@@ -28,7 +31,8 @@ draft: false
 
 ### Variants of Permutation and Combinations. There are two variants.
 - Without Repetition
-- With Repetition
+- With Repetition.
+
 Both Permutation and Combinations has these variants.
 
 ### What does Repetition Means
@@ -47,8 +51,11 @@ Both Permutation and Combinations has these variants.
 
    
 ### Python Itertools (Permutation and Combination):
+Order Matters
 - Permutation With Repetition  : ```itertools.product```
 - Permutation Without Repetition : ```itertools.permutations```
+
+Order Does not Matter
 - Combination With Repetition : ```itertools.combinations_with_replacement```
 - Combination Without Repetition : ```itertools.combinations```
 
@@ -58,10 +65,16 @@ from itertools import product, permutation, combination, combination_with_replac
 
 s = [1,2], r = 2
 # from s pick r 
-list(product(s,2)) # 1. includes items made of same elements, order does matter.
-list(permutation(s,2)) # 2. no items are made of same elements, order does matter.
-list(combination_with_replacement(s,2)) # 3. includes items made of same elements, order does not matter
-list(combination(s,2)) # 4. no items are made of same elements, order does not matter.
+# 1. includes items made of same elements, order does matter. it gives product of sxs. len(s)^2. 
+# 1.a. product has special case product(list,repeat=r) this gives permutaion with repetition
+# 1.b. It produces len(s)^r items , 2^2 = 4, if list has 3 items 3^2=9
+list(product(s,repeat=2)) 
+# 3.permutation without repetition. order maters
+list(permutation(s,2)) 
+# 4. combination with repetition order does not matter
+list(combination_with_replacement(s,2)) 
+# 5. combination without repetition, order does not matter.
+list(combination(s,2)) 
 
 ```
 ## Fin.

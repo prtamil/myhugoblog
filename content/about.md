@@ -9,8 +9,8 @@ I'm a introvert. From the age of 16 I'm coding almost daily.
 Yet i'am suffering from the feeling that i'am not worthy enough. 
 Anyway i enjoy programming. This saves my sanity.
 
-At age of 16 i started my journey with C with Windows. I'm 40 years old now.
-I have come a long way. During my College years i have learned Linux. From that time to till now Linux/Unix mesmerize me everyday. I also work on FreeBSD and i really like OpenBSD. 
+At age of 16 i started my journey with C with Windows95. I'm 40 years old now.
+I have came a long way. During my College years i have learned Linux. From that time to till now Linux/Unix mesmerize me everyday. I work on FreeBSD and i really like OpenBSD. 
 For me OpenBSD/C is my Apocalypse Stack [Thanks Covid-19].
 
 I have professional experience in C++ for almost 9 years. Then I switched to Python/JS.
@@ -39,7 +39,7 @@ My area of Interests include
 - Languages Personal [Python, CommonLisp, Clojure, Elixir, Javascript ]
 - WebFrameworks [ Django, Graphene, React, Angular, Mithril, Tailwind CSS]
 - Computer Security [Assembly, Linux, OpenBSD, etc..]
-- System Administration [SSL, LDAP, SSH, SSO, CentOS, Systemd, Bash/AWK/Sed]
+- System Administration [DNS, SSL, LDAP, SSH, SSO, CentOS, Systemd, Bash/AWK/Sed]
 - Software Design [Design Patterns, Concurrent Patterns, MicroService Patterns]
 - Computer Graphics [OpenGL, LinearAlgebra, RayTracing, Global Illumination, Shaders, Ascii]
 

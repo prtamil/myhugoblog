@@ -52,6 +52,17 @@ def product(*args, repeat=1):
 ```
 Lots of things packed in the above small code.
 #### Detail explanation of itertool.product implementation:
+Generally Product of Two lists can be as simple as 
+```python
+def product(A,B):
+    res = []
+    for x in A:
+        for y in B:
+          res.append([x,y])
+    return res
+```
+Below code is little complex because we are repeating for loops based on r and arrays.
+So the way is create intermediate list hold the intermediate list so you can loop over intermediate list and finally produce final list
 ```python
 def product(*args,r=1):
     pools = [tuple(pool) for pool in args] * r            # ---[1]
@@ -119,6 +130,18 @@ def product(*args, repeat=1):
     for prod in result:
         yield tuple(prod)
 ```
+#### Super Simplified Code for learning 
+```python
+  def product(arr,r=1):
+      prod = [[]]
+      for i in range(1,r+1):
+          next = [[]]
+          for x in prod:
+              for y in arr:
+                  next.append(x+[y])
+          prod = next
+      return prod
+```
 
 ### Verdict:
      Python may look simple but it can be more complex and hidden magic.
@@ -154,4 +177,5 @@ In-order to convert from list comprehension to loops we need to introduce tempor
                  r.append(x+[y])
           res = r
 ```
+
 ### Fin.
